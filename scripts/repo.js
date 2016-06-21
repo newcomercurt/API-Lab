@@ -8,13 +8,14 @@
     // Hint: What did you learn on Day 6? Use the method that lets you send a HEAD
     var $ajaxResponse = $.ajax({
       method: 'GET',
-      url: 'https://api.github.com/users/GeoffreyEmerson',
+      url: 'https://api.github.com/users/GeoffreyEmerson/repos',
       success: function () {
         console.log($ajaxResponse.responseJSON);
-        callback($ajaxResponse.responseJSON);
+        if (callback) callback($ajaxResponse.responseJSON);
       }
     });
   };
+  // repos.requestRepos();
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.
   // You could use this to filter all repos that have a non-zero `forks_count`, `stargazers_count`, or `watchers_count`.
