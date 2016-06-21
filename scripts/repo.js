@@ -11,7 +11,8 @@
       url: 'https://api.github.com/users/GeoffreyEmerson/repos',
       success: function () {
         console.log($ajaxResponse.responseJSON);
-        if (callback) callback($ajaxResponse.responseJSON);
+        repos.all = $ajaxResponse.responseJSON;
+        if (callback) callback();
       }
     });
   };
